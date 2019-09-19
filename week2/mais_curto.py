@@ -30,7 +30,7 @@ def nomeMaisCurto(nomes):
 			comprimentoDoNomeCurto = len(nome)
 			nomeCurto = nome
 
-		# se houver nomes com o mesmos comprimentos, ordene-os alfanumericamente
+		# se houver nomes com o mesmo comprimento, ordene-os alfanumericamente
 		# e defina como mais curto o primeiro resultado
 		elif len(nome) == comprimentoDoNomeCurto and nomeCurto != nome:
 			listaDeComparacao = sorted([nomeCurto, nome])
