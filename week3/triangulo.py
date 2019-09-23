@@ -1,6 +1,5 @@
-"""Week 3 - Lista de exercícios - 3."""
+"""Week 3 - Lista de exercícios - 3.
 
-"""
 Exercício 1: Uma classe para triângulos.
 Defina a classe Triangulo cujo construtor recebe 3 valores inteiros
 correspondentes aos lados a, b e c de um triângulo.
@@ -31,13 +30,13 @@ Aluno: Paulo Freitas Nobrega
 class Triangulo:
     """Triângulo é um polígono de três lados e três ângulos."""
 
-    def __init__(self, a, b, c):
+    def __init__(self, a: int, b: int, c: int):
         """Recebe como parâmetro os três lados de um triângulo a, b e c."""
         self.a = a
         self.b = b
         self.c = c
 
-    def side_list(self):
+    def side_list(self) -> list:
         """Retorna os lados em formato de lista."""
         return [self.a, self.b, self.c]
 
@@ -48,7 +47,7 @@ class Triangulo:
 
         return self.a + self.b + self.c
 
-    def tipo_lado(self):
+    def tipo_lado(self) -> 'nome do triangulo':
         """Retorna o tipo do triângulo."""
         side_name = ''
         sides = len(set(self.side_list()))
@@ -62,14 +61,14 @@ class Triangulo:
 
         return side_name
 
-    def retangulo(self):
+    def retangulo(self) -> bool:
         """Retorna se o triânguo é retângulo."""
         *side, hypotenuse = sorted(self.side_list())
         side_sum = (side[0] ** 2 + side[1] ** 2)
 
         return True if hypotenuse ** 2 == side_sum else False
 
-    def semelhantes(self, triangulo):
+    def semelhantes(self, triangulo) -> bool:
         """Retorna se dois triângulos são semelhantes - comp. dos lados."""
         t1 = self.side_list()
         t2 = triangulo.side_list()
