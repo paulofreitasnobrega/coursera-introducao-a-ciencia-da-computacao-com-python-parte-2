@@ -8,9 +8,12 @@ class Ordenator:
         """Método construtor."""
         self.list = list
 
+    def _get(self) -> list:
+        return self.list[:]
+
     def direct_selection(self) -> list:
         """Ordena em forma crescente uma lista de números."""
-        list = self.list[:]
+        list = self._get()
 
         for i in range(len(list)-1):
             min_position = i
