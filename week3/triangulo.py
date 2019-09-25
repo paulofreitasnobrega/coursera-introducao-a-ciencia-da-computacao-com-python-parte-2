@@ -47,7 +47,7 @@ class Triangulo:
 
         return self.a + self.b + self.c
 
-    def tipo_lado(self) -> 'nome do triangulo':
+    def tipo_lado(self) -> str:
         """Retorna o tipo do triângulo."""
         side_name = ''
         sides = len(set(self.side_list()))
