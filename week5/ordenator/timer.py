@@ -24,7 +24,10 @@ for i, l in lists.items():
     print("\n### LIST: {} ###".format(i))
 
     # Insertion
-    # [code]
+    start = t.time()
+    result_list = ordenator.insertion(l)
+    end = t.time()
+    print("[Insertion]:\t{}".format(end - start))
 
     # Bubble
     start = t.time()

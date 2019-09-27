@@ -9,15 +9,9 @@ class Ordenator:
         list = list[:]
 
         for i in range(len(list)-1, 0, -1):
-            change = False
-
             for j in range(i):
                 if list[j] > list[j+1]:
-                    change = True
                     list[j], list[j+1] = list[j+1], list[j]
-
-            if not change:
-                return list
 
         return list
 
@@ -25,10 +19,31 @@ class Ordenator:
         """Ordena uma lista utilizando o algoritmo: Ordenação por Inserção."""
         list = list[:]
 
+        for i in range(len(list)):
+            for j in range(i, 0, -1):
+                if list[j] < list[j-1]:
+                    list[j], list[j-1] = list[j-1], list[j]
+
+        return list
+
+    def _merge_divide(self, list: list, start: int, end: int):
+        # if len(list) > 1:
+        #     middle = len(list) // 2
+        #     left, right = list[:middle], list[middle:]
+        #     self._merge_divide(left)
+        #     self._merge_divide(right)
+        pass
+
+    def merge(self, list: list) -> list:
+        """Ordena uma lista utilizando o algoritmo: Ordenação por Mistura."""
+        list = list[:]
+        self._merge_divide(list, 0, len(list))
         pass
 
     def selection(self, list: list) -> list:
-        """Ordena uma lista utilizando o algoritmo: Seleção Direta."""
+        """
+        Ordena uma lista utilizando o algoritmo: Seleção Direta.
+        """
         list = list[:]
 
         for i in range(len(list)-1):
