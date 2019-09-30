@@ -26,19 +26,42 @@ class Ordenator:
 
         return list
 
-    def _merge_divide(self, list: list, start: int, end: int):
-        # if len(list) > 1:
-        #     middle = len(list) // 2
-        #     left, right = list[:middle], list[middle:]
-        #     self._merge_divide(left)
-        #     self._merge_divide(right)
-        pass
-
     def merge(self, list: list) -> list:
         """Ordena uma lista utilizando o algoritmo: Ordenação por Mistura."""
-        list = list[:]
-        self._merge_divide(list, 0, len(list))
-        pass
+        i = j = k = 0
+
+        if len(list) > 1:
+            middle = len(list) // 2
+            left = list[:middle]
+            right = list[middle:]
+
+            self.merge(left)
+            self.merge(right)
+
+            # quando houver elementos em ambos "montes" (esquerdo e direito)
+            while(i < len(left) and j < len(right)):
+                if left[i] < right[j]:
+                    list[k] = left[i]
+                    i += 1
+                else:
+                    list[k] = right[j]
+                    j += 1
+
+                k += 1
+
+            # quando hover elementos apenas no "monte" esquerdo
+            while(i < len(left)):
+                list[k] = left[i]
+                i += 1
+                k += 1
+
+            # quando hover elementos apenas no "monte" direito
+            while(j < len(right)):
+                list[k] = right[j]
+                j += 1
+                k += 1
+
+        return list
 
     def selection(self, list: list) -> list:
         """
