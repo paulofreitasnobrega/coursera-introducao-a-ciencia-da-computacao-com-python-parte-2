@@ -15,6 +15,10 @@ class Ordenator:
 
         return list
 
+    def heap(self, list: list) -> list:
+        """Ordena uma lista utilizando o algoritmo: Ordenação por Pilha."""
+        pass
+
     def insertion(self, list: list) -> list:
         """Ordena uma lista utilizando o algoritmo: Ordenação por Inserção."""
         list = list[:]
@@ -26,8 +30,7 @@ class Ordenator:
 
         return list
 
-    def merge(self, list: list) -> list:
-        """Ordena uma lista utilizando o algoritmo: Ordenação por Mistura."""
+    def _merge_sort(self, list: list):
         i = j = k = 0
 
         if len(list) > 1:
@@ -35,8 +38,8 @@ class Ordenator:
             left = list[:middle]
             right = list[middle:]
 
-            self.merge(left)
-            self.merge(right)
+            self._merge_sort(left)
+            self._merge_sort(right)
 
             # quando houver elementos em ambos "montes" (esquerdo e direito)
             while(i < len(left) and j < len(right)):
@@ -63,10 +66,16 @@ class Ordenator:
 
         return list
 
+    def merge(self, list: list) -> list:
+        """Ordena uma lista utilizando o algoritmo: Ordenação por Mistura."""
+        return self._merge_sort(list[:])
+
+    def quick(self, list: list) -> list:
+        """Ordena uma lista utilizando o algoritmo: Ordenação rápida."""
+        pass
+
     def selection(self, list: list) -> list:
-        """
-        Ordena uma lista utilizando o algoritmo: Seleção Direta.
-        """
+        """Ordena uma lista utilizando o algoritmo: Seleção Direta."""
         list = list[:]
 
         for i in range(len(list)-1):
@@ -79,3 +88,7 @@ class Ordenator:
             list[i], list[min_position] = list[min_position], list[i]
 
         return list
+
+    def shell(self, list: list) -> list:
+        """Ordena uma lista utilizando o algoritmo: Shell."""
+        pass

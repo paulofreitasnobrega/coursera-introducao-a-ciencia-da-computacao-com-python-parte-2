@@ -23,17 +23,23 @@ ordenator = Ordenator()
 for i, l in lists.items():
     print("\n### LIST: {} ###".format(i))
 
+    # Bubble
+    start = t.time()
+    result_list = ordenator.bubble(l)
+    end = t.time()
+    print("[Bubble]:\t{}".format(end - start))
+
     # Insertion
     start = t.time()
     result_list = ordenator.insertion(l)
     end = t.time()
     print("[Insertion]:\t{}".format(end - start))
 
-    # Bubble
+    # Merge
     start = t.time()
-    result_list = ordenator.bubble(l)
+    result_list = ordenator.merge(l)
     end = t.time()
-    print("[Bubble]:\t{}".format(end - start))
+    print("[Merge]:\t{}".format(end - start))
 
     # Selection
     start = t.time()
