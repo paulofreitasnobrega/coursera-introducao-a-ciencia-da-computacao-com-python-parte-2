@@ -53,6 +53,3 @@ def elefantes(n: int, max=None) -> str:
         return mstr + elefantes(n+1, max)
 
     return ""
-
-
-print(elefantes(3))
